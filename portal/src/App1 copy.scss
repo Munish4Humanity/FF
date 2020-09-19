@@ -1,0 +1,208 @@
+@import 'styles/config';
+@import 'styles/buttons';
+@import 'styles/alert';
+
+section {
+  height: 1782px;
+  width: 823px;
+  width: 100%;
+  border: 1px solid red;
+  border-radius: 0px;
+}
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Background */
+.background {
+  position: absolute;
+  width: 823px;
+  height: 196px;
+  left: 0px;
+  top: 0px;
+
+  background: #ffffff;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Free shipping over $2000 */
+.shipping {
+  height: 30px;
+  width: 287px;
+  left: 264px;
+  top: 103px;
+  border-radius: nullpx;
+}
+/* Header */
+// .header {
+//   position: absolute;
+//   width: 770.01px;
+//   height: 130.43px;
+//   border: 1px solid blue;
+//   //   left: 50px;
+//   //   top: 21px;
+// }
+
+/* Cart */
+.cart {
+  position: absolute;
+  visibility: hidden;
+  width: 68.93px;
+  height: 105.74px;
+  left: 43px;
+  top: 21px;
+}
+
+/* Vector */
+v1 {
+  position: absolute;
+  left: 7.28%;
+  right: 91.79%;
+  top: 6.68%;
+  bottom: 92.89%;
+
+  background: #0d2750;
+  transform: matrix(1, -0.02, 0.02, 1, 0, 0);
+}
+
+/* Vector */
+v2 {
+  position: absolute;
+  left: 11.6%;
+  right: 87.48%;
+  top: 7.1%;
+  bottom: 92.47%;
+
+  background: #0d2750;
+  transform: matrix(0.02, -1, 1, 0.02, 0, 0);
+}
+
+/* Vector */
+v3 {
+  position: absolute;
+  left: 5.6%;
+  right: 86.4%;
+  top: 3.69%;
+  bottom: 93.46%;
+
+  background: #0d2750;
+}
+
+/* Notifications */
+notification {
+  position: absolute;
+  width: 19px;
+  height: 19px;
+  left: 43px;
+  top: 21px;
+}
+
+/* Ellipse 1 */
+ellipse {
+  position: absolute;
+  width: 19px;
+  height: 19px;
+  left: 43px;
+  top: 21px;
+
+  background: #ff0000;
+}
+
+/* 99 */
+.nine {
+  position: absolute;
+  width: 10.67px;
+  height: 7.31px;
+  left: 47px;
+  top: 27px;
+
+  background: #ffffff;
+}
+
+/* Logo */
+.logo {
+  height: 109.72904968261719px;
+  width: 109.73333740234375px;
+  left: 30.725341796875px;
+  top: 41.697052001953125px;
+  border-radius: 0px;
+}
+
+/* Menu */
+.menu {
+  position: absolute;
+  width: 109.73px;
+  height: 109.73px;
+  left: 691px;
+  top: 41.7px;
+}
+
+/* Icon */
+.icon {
+  position: absolute;
+  width: 109.73px;
+  height: 109.73px;
+  left: 691px;
+  top: 41.7px;
+}
+
+/* Rectangle 1 */
+rec1 {
+  position: absolute;
+  visibility: hidden;
+  left: 83.96%;
+  right: 2.71%;
+  top: 2.34%;
+  bottom: 91.5%;
+
+  background: #0d2750;
+}
+/* Vector */
+v9 {
+  position: absolute;
+  left: 86.82%;
+  right: 5.56%;
+  top: 4.1%;
+  bottom: 93.26%;
+
+  background: #0d2750;
+}
+
+/* main_frame */
+.main_frame {
+  position: absolute;
+  left: 26.61%;
+  right: 26.49%;
+  top: 8.42%;
+  bottom: 86.53%;
+
+  /* FF Color */
+  background: #0d2750;
+  /* FF Color */
+  border: 1px solid #0d2750;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+
+/* 30% OFF WINDOWS */
+.win {
+  position: absolute;
+  width: 338px;
+  height: 45px;
+  left: 243px;
+  top: 172px;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 38px;
+  line-height: 45px;
+  /* identical to box height */
+  text-align: center;
+
+  /* White */
+  color: #ffffff;
+}
