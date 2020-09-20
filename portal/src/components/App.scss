@@ -1,6 +1,6 @@
-@import 'styles/config';
-@import 'styles/buttons';
-@import 'styles/alert';
+@import '../styles/config';
+@import '../styles/buttons';
+@import '../styles/alert';
 
 section {
   height: 1782px;
@@ -167,4 +167,84 @@ body {
   margin-top: 5px;
   margin-left: 5px;
   @extend .animated-background;
+}
+.wrapper {
+  /* border: 1px solid #ddd; */
+  display: flex;
+  overflow-x: auto;
+  position: absolute;
+  min-width: 512px;
+  min-height: 256px;
+  background: #ffffff;
+  margin-top: 5px;
+  margin: 0 auto;
+}
+.wrapper::-webkit-scrollbar {
+  width: 0;
+}
+// .wrapper .items {
+//   text-align: center;
+//   background-color: #fff;
+//   margin-right: 30px;
+//   border: 1px solid #000;
+//   background: linear-gradient(
+//     134.05deg,
+//     rgba(34, 80, 13, 0) 1.02%,
+//     rgba(13, 39, 80, 0.095) 101.5%
+//   );
+//   border: 1px solid #0d2750;
+//   box-sizing: border-box;
+//   border-radius: 3px;
+//   text-align: center;
+//   background-color: #fff;
+//   border: 1px solid #000;
+//   clear: both;
+//   background: linear-gradient(
+//     134.05deg,
+//     rgba(34, 80, 13, 0) 1.02%,
+//     rgba(13, 39, 80, 0.095) 101.5%
+//   );
+//   border: 1px solid #0d2750;
+//   box-sizing: border-box;
+//   border-radius: 3px;
+//   min-width: 512px;
+//   min-height: 256px;
+// }
+.wrapper .items {
+  border: 1px solid #c4c4c4;
+  max-height: 350px;
+  margin-top: 10px;
+  margin-right: 5px;
+}
+.center {
+  width: 256px;
+  height: 256px;
+}
+.title {
+  font-family: Roboto;
+  font-size: 28px;
+  display: block;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 33px;
+  letter-spacing: 0em;
+  text-align: left;
+  width: 130px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.price {
+  float: left;
+  margin-left: 5px;
+  position: fixed;
+}
+.more {
+  clear: both;
+  float: right;
+  right: 10px;
+  position: fixed;
+}
+.wrapper::-webkit-scrollbar {
+  width: 0;
 }
