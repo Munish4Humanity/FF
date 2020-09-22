@@ -68,9 +68,7 @@ class WindowTiles extends Component {
 
   render() {
     return (
-      <div className="App">
-        {this.state.loading ? <Preloader /> : <DoubleTile />}
-      </div>
+      <div className="App">{this.state.loading ? <Preloader /> : <Tile />}</div>
     );
   }
 }

@@ -244,7 +244,18 @@ body {
   float: right;
   right: 10px;
   position: fixed;
+  bottom: 10px;
 }
 .wrapper::-webkit-scrollbar {
   width: 0;
+}
+.rightleft {
+  display: flex;
+  overflow-x: auto;
+  position: absolute;
+  min-width: 512px;
+  min-height: 256px;
+  background: #ffffff;
+  margin-top: 5px;
+  margin: 0 auto;
 }

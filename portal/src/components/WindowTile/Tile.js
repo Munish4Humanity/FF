@@ -11,8 +11,10 @@ export class Tile extends Component {
     this.state = {
       tiles: [],
       loading: (Boolean = true),
+      fade: false,
     };
   }
+
   timedelay() {
     setTimeout(() => {
       this.setState(
@@ -52,57 +54,123 @@ export class Tile extends Component {
       })
       .catch((error) => console.log(error));
   }
-  renderItems() {
-    return this.state.tiles.map((item) => (
-      <>
-        if(Array.isArray(obj)){<SingleTile key={item.name} item={item} />}else
-        {<div>Not Found</div>}
-      </>
-    ));
-  }
+  // renderItems2() {
+  //   return (
+  //     <div>
+  //       {this.state.tiles.map((rowdata, i) => (
+  //         <div>
+  //           (typeOf(rowdata.options) == 'object') ?
+  //           <div>
+  //             {rowdata.options.map((subcat, k) => (
+  //               <div>{subcat.name}</div>
+  //             ))}
+  //           </div>
+  //           ) : <h1>Text</h1>}
+  //         </div>
+  //       )}
+  //     </div>
+  //   );
+
+  // ------------------------------------
   render1() {
-    const { subItems } = this.state.tiles;
+    const fade = this.state.fade;
     return (
-      <div>
-        {Object.values(subItems).map((value) => (
-          <option subItems={value} key={value.subItems} />
-        ))}
+      <div className="rightleft">
+        <button
+          ref="button"
+          onClick={() => this.setState({ fade: true })}
+          onAnimationEnd={() => this.setState({ fade: false })}
+          className={fade ? 'fade' : ''}
+        >
+          <subcat />
+        </button>
       </div>
     );
   }
+  subcat() {
+    return (
+      <main class="animate__animated animate__fadeInRight">
+        <section>
+          <div className="header">
+            <div className="background">
+              <img
+                alt="header"
+                className="headerimg"
+                src="images/header.svg"
+              ></img>
+              <div className="shipping">
+                <h1 className="shipping">Free Shipping over $2000</h1>
+                <div className="percent">
+                  <span className="discount">30% OFF WINDOWS </span>
+                </div>
+                <div className="wrapper">{this.renderItems()}</div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    );
+  }
+  // renderItems() {
+  //   return (
+  //     <div>
+  //       {this.state.tiles.map((rowdata, i) => (
+  //         <div>
+  //           (typeOf(rowdata.options) == 'object') ?
+  //           <div>
+  //             {rowdata.options.map((subcat, k) => (
+  //               <div>{subcat.name}</div>
+  //             ))}
+  //           </div>
+  //           :<h1>Test</h1>
+  //         </div>
+  //       ))}
+  //     </div>
+  //   );
+  // }
 
-  renderSubItems() {
-    return this.state.tiles.map((i) => (
+  // renderSub() {
+  //   return (
+  //     <div className="App">
+  //       {typeOf(
+  //         this.state.tiles.map(item.options == 'object') ? (
+  //           <render1 />
+  //         ) : (
+  //           <Tile />
+  //         )
+  //       )}
+  //     </div>
+  //   );
+  // }
+  renderItems() {
+    return this.state.tiles.map((item) => (
       <>
-        <SingleTile key={i.name} item={i} />
+        <SingleTile key={item.name} item={item} />
       </>
     ));
   }
-
   render() {
     return (
-      <>
-        <main class="animate__animated">
-          <section>
-            <div className="header">
-              <div className="background">
-                <img
-                  alt="header"
-                  className="headerimg"
-                  src="images/header.svg"
-                ></img>
-                <div className="shipping">
-                  <h1 className="shipping">Free Shipping over $2000</h1>
-                  <div className="percent">
-                    <span className="discount">30% OFF WINDOWS </span>
-                  </div>
-                  <div className="wrapper">{this.renderItems()}</div>
+      <main class="animate__animated">
+        <section>
+          <div className="header">
+            <div className="background">
+              <img
+                alt="header"
+                className="headerimg"
+                src="images/header.svg"
+              ></img>
+              <div className="shipping">
+                <h1 className="shipping">Free Shipping over $2000</h1>
+                <div className="percent">
+                  <span className="discount">30% OFF WINDOWS </span>
                 </div>
+                <div className="wrapper">{this.renderItems()}</div>
               </div>
             </div>
-          </section>
-        </main>
-      </>
+          </div>
+        </section>
+      </main>
     );
   }
 }

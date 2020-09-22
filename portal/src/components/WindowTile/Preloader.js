@@ -3,7 +3,7 @@ import React from 'react';
 export function Preloader() {
   return (
     <>
-      <main class="animate__animated_delay-10s">
+      <main>
         <section>
           <div className="header">
             <div className="background">
