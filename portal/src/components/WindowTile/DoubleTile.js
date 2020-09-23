@@ -57,19 +57,19 @@ export class DoubleTile extends Component {
       </>
     ));
   }
-  render1() {
-    const { subItems } = this.state.tiles;
+  rendersub() {
+    const { subItems } = this.state.tiles.options;
     return (
       <div>
         {Object.values(subItems).map((i) => (
-          <DoubleTile key={i.name} item={i} />
+          <SingleTile key={i.name} item={i} />
         ))}
       </div>
     );
   }
 
   renderSubItems() {
-    return this.state.tiles.map((i) => (
+    return this.state.tiles.options.map((i) => (
       <>
         <SingleTile key={i.name} item={i} />
       </>
@@ -78,7 +78,7 @@ export class DoubleTile extends Component {
   render() {
     return (
       <>
-        <main class="animate__animated">
+        <main class="animate__animated animate__fadeInRIGHT">
           <section>
             <div className="header">
               <div className="background">
@@ -88,11 +88,31 @@ export class DoubleTile extends Component {
                   src="images/header.svg"
                 ></img>
                 <div className="shipping">
-                  <h1 className="shipping">Free Shipping over $2000</h1>
+                  <h1 className="shipping">Free Shipping over $1000</h1>
                   <div className="percent">
                     <span className="discount">30% OFF WINDOWS </span>
                   </div>
-                  <div className="wrapper">{this.renderSubItems()}</div>
+                  <div className="wrapper">
+                    <main class="animate__animated animate__fadeInRight">
+                      <div id="slide" className="items">
+                        <section>
+                          <img
+                            alt="window"
+                            className="center"
+                            src={`https://assets.ff-24.net/1.1.png`}
+                          ></img>
+                          <div className="title">
+                            {this.state.tiles.item.options.name}
+                          </div>
+                          <div className="price">$24</div>
+                          <div className="subcat">
+                            <a href="DoubleTile">View</a>
+                          </div>
+                        </section>
+                      </div>
+                      <subcat />
+                    </main>
+                  </div>
                 </div>
               </div>
             </div>

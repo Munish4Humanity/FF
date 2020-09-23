@@ -4,27 +4,39 @@ import ReactDom, { unstable_renderSubtreeIntoContainer } from 'react-dom';
 import ReactBootstrap from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
 import { Modal } from 'react-bootstrap';
+import DoubleTile from './DoubleTile';
 // import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 // var Carousel = require('react-responsive-carousel').Carousel;
 const SingleTile = ({ item }) => (
-  <main class="animate__animated animate__fadeInLeft">
-    <div id="slide" className="items">
-      <section>
-        <img
-          alt="window"
-          className="center"
-          src={`https://assets.ff-24.net/${item.image}`}
-        ></img>
-        <div className="title">{item.name}</div>
-        <div className="price">$2</div>
-        <div className="more">
-          <Subcat props={item} />
-        </div>
-      </section>
-    </div>
-  </main>
+  <div className="App">
+    {item.options ? (
+      <Subcat name={item.name} img={item.image} />
+    ) : (
+      <Cat name={item.name} desc={item.description} img={item.image} />
+    )}
+  </div>
 );
 
+function Cat(props) {
+  return (
+    <main class="animate__fadeInLeft">
+      <div id="slide" className="items">
+        <section>
+          <img
+            alt="window"
+            className="center"
+            src={`https://assets.ff-24.net/${props.img}`}
+          ></img>
+          <div className="title">{props.name}</div>
+          <div className="price">$2</div>
+          <div className="more">
+            <ModalBox Heading={props.name} desc={props.desc} />
+          </div>
+        </section>
+      </div>
+    </main>
+  );
+}
 function Subcat(props) {
   const [subshow, subsetShow] = useState(false);
 
@@ -38,21 +50,22 @@ function Subcat(props) {
           more..
         </a>
       }
-      <main
-        show={subshow}
-        onHide={subhandleClose}
-        class="animate__animated animate__fadeInRight"
-      >
+      <main show={subshow} onHide={subhandleClose} class="animate__fadeInRight">
         <div id="slide" className="items">
           <section>
             <img
               alt="window"
               className="center"
-              src={`https://assets.ff-24.net/1.1.png`}
+              src={`https://assets.ff-24.net/${props.img}`}
             ></img>
-            <div className="title">{props.name}ee</div>
+            <div className="title">{props.name}</div>
             <div className="price">$24</div>
-            <div className="more"></div>
+            <div className="more">
+              <ModalBox Heading={props.name} desc={props.desc} />
+            </div>
+            <div className="subcat">
+              <a href="DTile">View</a>
+            </div>
           </section>
         </div>
         <subcat />
@@ -61,7 +74,7 @@ function Subcat(props) {
   );
 }
 
-function Example() {
+function ModalBox(props) {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -76,9 +89,9 @@ function Example() {
       }
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Title</Modal.Title>
+          <Modal.Title>{props.Heading}</Modal.Title>
         </Modal.Header>
-        <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+        <Modal.Body>{props.desc}</Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Close

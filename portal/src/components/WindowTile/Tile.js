@@ -151,7 +151,7 @@ export class Tile extends Component {
   }
   render() {
     return (
-      <main class="animate__animated">
+      <main class="animate__animated animate__fadeInLeft">
         <section>
           <div className="header">
             <div className="background">

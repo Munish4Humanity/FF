@@ -6,7 +6,7 @@ import { Button } from 'react-bootstrap';
 import { Modal } from 'react-bootstrap';
 // import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 // var Carousel = require('react-responsive-carousel').Carousel;
-const SingleTile = ({ item }) => (
+const DTile = ({ item }) => (
   <>
     <main class="animate__animated animate__fadeInLeft">
       <div id="slide" className="items">
@@ -57,4 +57,4 @@ function Example() {
     </>
   );
 }
-export default SingleTile;
+export default DTile;

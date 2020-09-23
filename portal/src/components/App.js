@@ -8,6 +8,8 @@ function App() {
       <Switch>
         <Route path="/" exact component={WindowTile} />
         <Route path="/tile" component={WindowTile} />
+        <Route path="/dtile" component={WindowTile} />
+        <Route path="/doubletile" component={WindowTile} />
       </Switch>
     </Router>
   );

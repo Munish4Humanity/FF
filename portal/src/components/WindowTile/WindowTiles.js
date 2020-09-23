@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import SingleTile from './SingleTile';
+import DTile from './DqTile';
 import DoubleTile from './DoubleTile';
 import ReactBootstrap from 'react-bootstrap';
 import $ from 'jquery';
